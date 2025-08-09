@@ -1,0 +1,16 @@
+# 1. Create project folder
+mkdir fake-esp32 server && cd fake-esp32server
+
+# 2. init npm and install deps
+npm init -y
+npm install express ws cors
+npm install -D nodemon
+
+# 3. Create index.js 
+
+# 4. add scripts to package.json for convenience:
+    start node index.js
+    dev nodemon index.js
+
+# 5. run
+    node index.js
