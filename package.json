@@ -20,9 +20,13 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "tailwindcss": "^4.1.11",
     "ws": "^8.18.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "autoprefixer": "^10.4.21",
+    "axios": "^1.11.0",
+    "nodemon": "^3.1.10",
+    "postcss": "^8.5.6"
   }
 }
