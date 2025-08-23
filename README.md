@@ -26,4 +26,5 @@ TECH STACK
 ** Libraries **
 
 ## Repositore structure
-    - Remote Controller
+    - firmware
+    - webapp
