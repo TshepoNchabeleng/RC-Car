@@ -5,7 +5,8 @@ custom control logic.
 This project is part of my journey into embedded systems and control engineering.
 
  ## preview
- [Images of the project below]
+ [Images and videos of the project below]
+ https://drive.google.com/drive/folders/1CB-amN060bx7MuGmdWndF7I3c5yEUTpg?usp=drive_link
 
  ##features
  ** wireless control ** - Control via Wifi using a custom remote web application at the moment
