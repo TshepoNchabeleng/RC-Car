@@ -6,24 +6,17 @@ import axios from 'axios';
 
 
 const App = () => {
-  // useState hook to manage the IP address state.
-  const [ip, setIp] = useState('localhost:3000');
-  
-  // useState hook to manage the connection status message.
+  const [ip, setIp] = useState('192.168.4.1'); // ESP32 hotspot IP
   const [status, setStatus] = useState('Disconnected');
 
-  /**
-   * Sends a command to the specified IP address via a POST request.
-   * The server expects the command in the request body.
-   * @param {string} command The command to send (e.g., 'forward', 'stop').
-   */
+  // Send command to ESP32
   const sendCommand = async (command) => {
     try {
       setStatus(`Sending command: ${command}...`);
-      await axios.post(`http://${ip}/devices/esp32-1/command`, { command });
+      await axios.get(`http://${ip}/led?command=${command}`);
       setStatus(`Command sent: ${command}`);
     } catch (error) {
-      console.error('Error sending command:', error);
+      console.error(error);
       setStatus(`Error: Could not reach ${ip}`);
     }
   };
@@ -124,35 +117,27 @@ const App = () => {
         {/* Forward button */}
         <button
           style={{ ...styles.button, ...styles.blueButton }}
-          onClick={() => sendCommand('forward')}
-        >
-          ↑
-        </button>
+          onClick={() => sendCommand("forward")}
+        >↑</button>
         
         <div style={styles.buttonRow}>
           {/* Left button */}
           <button
             style={{ ...styles.button, ...styles.blueButton }}
-            onClick={() => sendCommand('left')}
-          >
-            ←
-          </button>
+            onClick={() => sendCommand("left")}
+          >←</button>
           
           {/* Stop button */}
           <button
             style={{ ...styles.button, ...styles.redButton }}
-            onClick={() => sendCommand('stop')}
-          >
-            ■
-          </button>
+            onClick={() => sendCommand("stop")}
+          >■</button>
           
           {/* Right button */}
           <button
             style={{ ...styles.button, ...styles.blueButton }}
-            onClick={() => sendCommand('right')}
-          >
-            →
-          </button>
+            onClick={() => sendCommand("right")}
+          >→</button>
         </div>
         
         {/* Back button */}
